@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:wght@400;500&display=swap');
 
 .head {
-    margin-left: -10px;
-    margin-top: -10px;
+    margin: -10px;
     padding-top: 10px;
     display: flex;
     flex-direction: row;
@@ -185,14 +184,34 @@ hr {
     }
 }
 
-@media (max-width:668px) {
+@media only screen and (max-width:668px) {
+    .container {
+        width: 100%;
+    }
 
-    .top-players,
+    .players,
+    .blogs,
     .courses {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .player,
     .blog {
-        display: block;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width:669px) and (max-width:992px) {
+    .container {
+        width: 100%;
+    }
+
+    .players,
+    .courses {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
